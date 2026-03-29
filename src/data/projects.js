@@ -22,7 +22,7 @@ export const projects = [
         links: [
             { labelKey: "backendRepo", url: "https://github.com/Tomilomi/chat-in-realtime-collab" },
             { labelKey: "frontendRepo", url: "https://github.com/Tomilomi/chat-collab-react" },
-            { labelKey: "demoLabel", url: "https://chat-collab-frontend.onrender.com/login" },
+            { labelKey: "demoLabel", url: "https://chat-collab-frontend.onrender.com" },
         ],
         tags: [".NET", "ASP.NET Core", "SignalR", "PostgreSQL", "EF Core", "JWT", "React"],
     },
