@@ -1,0 +1,13 @@
+.taglist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 15px;
+}
+
+.label {
+    margin: 0 0 4px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}

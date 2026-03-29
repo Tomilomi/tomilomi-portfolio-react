@@ -1,0 +1,164 @@
+/* ========================================
+   VARIABLES
+   ======================================== */
+
+:root {
+    --bg: #1a1612;
+    --panel: #3d342b;
+    --accent: #c4887c;
+    --text: #f5e6d3;
+    --muted: #c9b89a;
+    --body-bg: #e8dcc8;
+    --body-color: #f5e6d3;
+    --h1-bg: #3d342b;
+    --h1-color: #c4887c;
+    --subtitle-bg: #3d342b;
+    --subtitle-color: #e8dcc8;
+    --section-border: rgba(196, 136, 124, 0.25);
+    --section-shadow: rgba(255, 255, 255, 0.03);
+    --tag-color: #1a1612;
+    --button-bg: #e8dcc8;
+    --button-text: #3d342b;
+    --noise-opacity: 0.18;
+}
+
+body.dark {
+    --bg: #0d0a08;
+    --panel: #1a1412;
+    --accent: #c41e3a;
+    --text: #e8dfd5;
+    --muted: #a8998a;
+    --body-bg: #0d0a08;
+    --body-color: #e8dfd5;
+    --h1-bg: #1a1412;
+    --h1-color: #c41e3a;
+    --subtitle-bg: #1a1412;
+    --subtitle-color: #e8dfd5;
+    --section-border: rgba(196, 30, 58, 0.25);
+    --section-shadow: rgba(196, 30, 58, 0.1);
+    --tag-color: #0d0a08;
+    --button-bg: #c41e3a;
+    --button-text: #0d0a08;
+    --noise-opacity: 0.12;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   GENERAL
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Courier New", monospace;
+    color: var(--body-color);
+    background-color: var(--body-bg);
+    background-attachment: fixed;
+    background-size: 400px 400px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+li::marker {
+    color: var(--accent);
+}
+
+/* ========================================
+   LANG FADE
+   ======================================== */
+
+.lang-fade {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+    .controls {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        justify-content: space-between;
+        gap: 8px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-h1 {
+        font-size: 2.2rem !important;
+    }
+
+    .portfolio-container {
+        padding: 40px 16px !important;
+    }
+}
+
+/* ========================================
+   PRINT
+   ======================================== */
+
+@media print {
+    .controls,
+    #sakana-root {
+        display: none !important;
+    }
+}
+
+
+#sakana-root {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 999999;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 768px) {
+    #sakana-root {
+        transform: scale(0.6);
+        bottom: 0px;
+        left: 0px;
+    }
+}

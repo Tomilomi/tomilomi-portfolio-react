@@ -1,0 +1,51 @@
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 15px;
+    background: var(--h1-bg);
+    color: var(--h1-color);
+    padding: 15px 25px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-family: "Courier New", monospace;
+    transform: rotate(-1deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                color 0.3s ease,
+                background 0.3s ease;
+}
+
+.h1:hover {
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: var(--subtitle-bg);
+    padding: 8px 18px;
+    display: inline-block;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transform: rotate(0.5deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                color 0.3s ease,
+                background 0.3s ease;
+}
+
+.subtitle:hover {
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
