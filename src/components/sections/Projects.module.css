@@ -1,58 +1,90 @@
 .card {
+    border: 1px solid var(--section-border);
+    border-radius: 10px;
+    overflow: hidden;
     margin-bottom: 8px;
 }
 
-.projectTitle {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin: 0 0 10px;
+.cardHeader {
+    background: var(--accent);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.summary {
-    font-weight: 600;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin: 0 0 14px;
+.cardHeaderDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--tag-color);
+    opacity: 0.4;
+}
+
+.projectTitle {
+    color: var(--tag-color);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.cardBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
 }
 
 .preview {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
+    min-height: 200px;
     object-fit: cover;
     object-position: top;
-    border-radius: 8px;
-    margin-bottom: 14px;
-    border: 1px solid var(--section-border);
+    display: block;
 }
 
 .placeholder {
     width: 100%;
-    height: 120px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    border: 1px dashed var(--accent);
+    border-right: 1px solid var(--section-border);
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 14px;
+}
+
+.cardInfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid var(--section-border);
+}
+
+.summary {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 16px;
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 0 0 14px;
+    margin-bottom: 0;
 }
 
 .link {
     display: inline-block;
     padding: 6px 14px;
     font-family: "Courier New", monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--accent);
@@ -69,11 +101,12 @@
     text-decoration: none;
 }
 
-.taglist {
+.cardFooter {
+    padding: 14px 16px;
+    border-top: 1px solid var(--section-border);
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: 0;
 }
 
 .separator {
@@ -81,4 +114,19 @@
     border-top: 2px dashed var(--accent);
     opacity: 0.3;
     margin: 28px 0;
+}
+
+@media (max-width: 600px) {
+    .cardBody {
+        grid-template-columns: 1fr;
+    }
+
+    .cardInfo {
+        border-left: none;
+        border-top: 1px solid var(--section-border);
+    }
+
+    .preview {
+        min-height: 160px;
+    }
 }
