@@ -4,15 +4,11 @@ import SectionTitle from "../ui/SectionTitle";
 import Tag from "../ui/Tag";
 import styles from "./Projects.module.css";
 
-function ProjectCard({ project, t }) {
+function ProjectCard({ project, t, index }) {
     return (
-        <div className={styles.card}>
-            <div className={styles.cardHeader}>
-                <div className={styles.cardHeaderDot} />
-                <div className={styles.cardHeaderDot} />
-                <div className={styles.cardHeaderDot} />
-                <p className={styles.projectTitle}>{project.name}</p>
-            </div>
+        <div className={`${styles.card} ${index % 2 === 0 ? styles.odd : styles.even}`}>
+            <div className={styles.tape} />
+            <p className={styles.projectTitle}>{project.name}</p>
 
             <div className={styles.cardBody}>
                 {project.preview ? (
@@ -66,10 +62,10 @@ export default function Projects({ t }) {
 
             {projects.map((project, i) => (
                 <div key={project.id}>
-                    <ProjectCard project={project} t={t} />
+                    <ProjectCard project={project} t={t} index={i} />
 
                     {i < projects.length - 1 && (
-                        <hr className={styles.separator} />
+                        <div className={styles.separator} />
                     )}
                 </div>
             ))}
