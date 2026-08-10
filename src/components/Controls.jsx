@@ -12,10 +12,10 @@ export default function Controls({ dark, toggleTheme, toggleLang, t }) {
 
             <a
                 className={`${styles.button} ${styles.pdfBtn}`}
-                href="assets/cv_aparicio_tomas.pdf"
-                download
-                >
-                    {t.downloadBtn}
+                href="/cv_aparicio_tomas.pdf"
+                download="cv_aparicio_tomas.pdf"
+            >
+                {t.downloadBtn}
             </a>
 
             <button
